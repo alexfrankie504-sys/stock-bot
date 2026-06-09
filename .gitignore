@@ -1,7 +1,6 @@
 cat > .gitignore << 'EOF'
 .venv/
 data/cache/
-paper_trades.json
 __pycache__/
 *.pyc
 *.png
