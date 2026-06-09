@@ -1,0 +1,8 @@
+yfinance
+pandas
+ta
+plotly
+streamlit
+requests
+yagmail
+schedule
