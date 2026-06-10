@@ -1,6 +1,6 @@
 """
-dashboard.py — Live portfolio dashboard
-========================================
+dashboard.py — Live portfolio dashboard with auto-refresh
+==========================================================
 Usage:
     streamlit run dashboard.py
 """
@@ -8,6 +8,7 @@ Usage:
 import json
 import os
 import datetime
+import time
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -30,6 +31,19 @@ st.set_page_config(
     layout     = "wide",
 )
 
+# ── Auto refresh every 60 seconds ─────────────────────────────────────────────
+
+st.markdown(
+    """
+    <script>
+        setTimeout(function() {
+            window.location.reload();
+        }, 60000);
+    </script>
+    """,
+    unsafe_allow_html=True
+)
+
 # ── Load state ────────────────────────────────────────────────────────────────
 
 def load_state() -> dict:
@@ -49,7 +63,7 @@ def load_state() -> dict:
 
 # ── Fetch live signals ─────────────────────────────────────────────────────────
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=60)
 def fetch_signals():
     results = {}
     for ticker in TICKERS:
@@ -71,11 +85,14 @@ def portfolio_value(state, prices):
 # ── Main dashboard ─────────────────────────────────────────────────────────────
 
 st.title("📈 Stock Bot Dashboard")
-st.caption(f"Last updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-if st.button("🔄 Refresh Data"):
-    st.cache_data.clear()
-    st.rerun()
+col_time, col_btn = st.columns([3, 1])
+with col_time:
+    st.caption(f"Last updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} — auto-refreshes every 60 seconds")
+with col_btn:
+    if st.button("🔄 Refresh Now"):
+        st.cache_data.clear()
+        st.rerun()
 
 state   = load_state()
 signals = fetch_signals()
@@ -145,11 +162,25 @@ if state["positions"]:
             "Shares":      pos["shares"],
             "Entry Price": f"${pos['entry_price']:,.2f}",
             "Current":     f"${current:,.2f}",
+            "Stop Loss":   f"${pos['stop_loss']:,.2f}",
             "P/L ($)":     f"${pl:+,.2f}",
             "P/L (%)":     f"{pl_pct:+.1f}%",
             "Entry Date":  pos["entry_date"],
         })
-    st.dataframe(pd.DataFrame(pos_rows), use_container_width=True, hide_index=True)
+
+    def color_pl(val):
+        if "+" in str(val):
+            return "color: #4CAF50; font-weight: bold"
+        elif "-" in str(val):
+            return "color: #F44336; font-weight: bold"
+        return ""
+
+    df_pos = pd.DataFrame(pos_rows)
+    st.dataframe(
+        df_pos.style.map(color_pl, subset=["P/L ($)", "P/L (%)"]),
+        use_container_width=True,
+        hide_index=True
+    )
 else:
     st.info("No open positions — waiting for a BUY signal.")
 
@@ -222,20 +253,30 @@ st.markdown("---")
 
 st.subheader("🔍 Signal Breakdown")
 
-cols = st.columns(len(TICKERS))
-for i, ticker in enumerate(TICKERS):
-    sig = signals.get(ticker, {})
-    if "error" in sig:
-        continue
-    with cols[i]:
-        signal = sig["signal"]
-        color  = "green" if signal == "BUY" else "red" if signal == "SELL" else "gray"
-        st.markdown(f"### {ticker}")
-        st.markdown(f"**Price:** ${sig['close']:,.2f}")
-        st.markdown(f"**Signal:** :{color}[{signal}]")
-        st.markdown(f"**RSI:** {sig['rsi']}")
-        st.markdown(f"**SMA50:** {sig['sma_fast']}")
-        st.markdown(f"**SMA200:** {sig['sma_slow']}")
+cols = st.columns(5)
+buy_tickers  = [t for t, s in signals.items() if s.get("signal") == "BUY"]
+hold_tickers = [t for t, s in signals.items() if s.get("signal") == "HOLD"]
+sell_tickers = [t for t, s in signals.items() if s.get("signal") == "SELL"]
+
+col_a, col_b, col_c = st.columns(3)
+with col_a:
+    st.markdown("### 🟢 BUY")
+    for t in buy_tickers:
+        sig = signals[t]
+        st.markdown(f"**{t}** — ${sig['close']:,.2f}")
+with col_b:
+    st.markdown("### ⚪ HOLD")
+    for t in hold_tickers:
+        sig = signals[t]
+        st.markdown(f"**{t}** — ${sig['close']:,.2f}")
+with col_c:
+    st.markdown("### 🔴 SELL")
+    if sell_tickers:
+        for t in sell_tickers:
+            sig = signals[t]
+            st.markdown(f"**{t}** — ${sig['close']:,.2f}")
+    else:
+        st.markdown("None today")
 
 st.markdown("---")
-st.caption("Run python3 paper_trader.py daily to update your portfolio. Dashboard refreshes every 5 minutes.")
+st.caption("Bot runs every weekday at 9am. Dashboard auto-refreshes every 60 seconds.")
