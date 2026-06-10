@@ -2,17 +2,19 @@ name: Daily Stock Bot
 
 on:
   schedule:
-    - cron: '0 13 * * 1-5'  # 9am EST (1pm UTC) every weekday
-  workflow_dispatch:          # allows manual trigger too
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -23,9 +25,12 @@ jobs:
         run: python3 paper_trader.py
 
       - name: Push updated trades to GitHub
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.email "bot@stockbot.com"
           git config --global user.name "Stock Bot"
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/alexfrankie504-sys/stock-bot.git
           git add paper_trades.json
           git diff --staged --quiet || git commit -m "Auto update trades"
           git push
