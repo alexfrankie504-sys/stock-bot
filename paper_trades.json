@@ -25471,6 +25471,353 @@
         }
       ],
       "portfolio_value": 10212.07
+    },
+    {
+      "date": "2026-09-04",
+      "signals": [
+        {
+          "ticker": "AAPL",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 320.79,
+          "rsi": 54.77,
+          "sma_fast": 315.0,
+          "sma_slow": 283.44,
+          "macd": 2.7072,
+          "volume_ratio": 0.51
+        },
+        {
+          "ticker": "MSFT",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 501.58,
+          "rsi": 60.72,
+          "sma_fast": 443.6,
+          "sma_slow": 429.38,
+          "macd": 15.6329,
+          "volume_ratio": 0.3
+        },
+        {
+          "ticker": "GOOGL",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 338.55,
+          "rsi": 44.88,
+          "sma_fast": 348.57,
+          "sma_slow": 335.71,
+          "macd": -2.9743,
+          "volume_ratio": 0.43
+        },
+        {
+          "ticker": "NVDA",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 231.28,
+          "rsi": 60.94,
+          "sma_fast": 210.58,
+          "sma_slow": 196.53,
+          "macd": 3.9063,
+          "volume_ratio": 0.62
+        },
+        {
+          "ticker": "AMZN",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 257.16,
+          "rsi": 48.38,
+          "sma_fast": 253.92,
+          "sma_slow": 239.12,
+          "macd": 0.2315,
+          "volume_ratio": 0.42
+        },
+        {
+          "ticker": "META",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 612.19,
+          "rsi": 61.13,
+          "sma_fast": 595.4,
+          "sma_slow": 621.58,
+          "macd": 1.5407,
+          "volume_ratio": 0.44
+        },
+        {
+          "ticker": "TSLA",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 351.93,
+          "rsi": 50.16,
+          "sma_fast": 357.9,
+          "sma_slow": 399.55,
+          "macd": 3.4882,
+          "volume_ratio": 1.14
+        },
+        {
+          "ticker": "JPM",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 358.02,
+          "rsi": 54.16,
+          "sma_fast": 349.61,
+          "sma_slow": 316.32,
+          "macd": 2.0909,
+          "volume_ratio": 0.39
+        },
+        {
+          "ticker": "V",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 376.26,
+          "rsi": 56.49,
+          "sma_fast": 362.81,
+          "sma_slow": 332.93,
+          "macd": 5.1786,
+          "volume_ratio": 0.19
+        },
+        {
+          "ticker": "XOM",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 160.23,
+          "rsi": 53.02,
+          "sma_fast": 152.3,
+          "sma_slow": 143.08,
+          "macd": 2.2526,
+          "volume_ratio": 0.32
+        },
+        {
+          "ticker": "JNJ",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 276.45,
+          "rsi": 62.93,
+          "sma_fast": 260.75,
+          "sma_slow": 233.51,
+          "macd": 4.7579,
+          "volume_ratio": 0.24
+        },
+        {
+          "ticker": "WMT",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 107.48,
+          "rsi": 46.73,
+          "sma_fast": 110.68,
+          "sma_slow": 118.15,
+          "macd": -1.7024,
+          "volume_ratio": 0.28
+        },
+        {
+          "ticker": "PG",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 146.88,
+          "rsi": 54.32,
+          "sma_fast": 146.31,
+          "sma_slow": 145.84,
+          "macd": 0.1252,
+          "volume_ratio": 0.27
+        },
+        {
+          "ticker": "HD",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 320.32,
+          "rsi": 39.35,
+          "sma_fast": 336.72,
+          "sma_slow": 338.64,
+          "macd": -4.9966,
+          "volume_ratio": 0.25
+        },
+        {
+          "ticker": "CVX",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 209.05,
+          "rsi": 65.83,
+          "sma_fast": 189.97,
+          "sma_slow": 178.23,
+          "macd": 5.3111,
+          "volume_ratio": 0.27
+        },
+        {
+          "ticker": "MRK",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 150.47,
+          "rsi": 62.57,
+          "sma_fast": 134.59,
+          "sma_slow": 117.44,
+          "macd": 5.509,
+          "volume_ratio": 0.15
+        },
+        {
+          "ticker": "PEP",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 138.16,
+          "rsi": 43.35,
+          "sma_fast": 139.66,
+          "sma_slow": 147.13,
+          "macd": -0.0209,
+          "volume_ratio": 0.38
+        },
+        {
+          "ticker": "COST",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 915.48,
+          "rsi": 38.07,
+          "sma_fast": 943.0,
+          "sma_slow": 957.89,
+          "macd": -5.8138,
+          "volume_ratio": 0.47
+        },
+        {
+          "ticker": "AVGO",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 355.38,
+          "rsi": 36.75,
+          "sma_fast": 383.61,
+          "sma_slow": 369.02,
+          "macd": -8.9956,
+          "volume_ratio": 0.7
+        },
+        {
+          "ticker": "ADBE",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 268.11,
+          "rsi": 49.71,
+          "sma_fast": 248.88,
+          "sma_slow": 267.94,
+          "macd": 8.9804,
+          "volume_ratio": 0.9
+        },
+        {
+          "ticker": "CSCO",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 109.37,
+          "rsi": 41.51,
+          "sma_fast": 114.24,
+          "sma_slow": 94.24,
+          "macd": -1.735,
+          "volume_ratio": 0.19
+        },
+        {
+          "ticker": "MCD",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 256.68,
+          "rsi": 36.71,
+          "sma_fast": 267.74,
+          "sma_slow": 291.85,
+          "macd": -2.7339,
+          "volume_ratio": 0.47
+        },
+        {
+          "ticker": "NKE",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 38.51,
+          "rsi": 42.03,
+          "sma_fast": 41.11,
+          "sma_slow": 50.4,
+          "macd": -0.8404,
+          "volume_ratio": 0.4
+        },
+        {
+          "ticker": "AMD",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 473.86,
+          "rsi": 48.6,
+          "sma_fast": 499.2,
+          "sma_slow": 340.98,
+          "macd": -8.506,
+          "volume_ratio": 0.62
+        },
+        {
+          "ticker": "QCOM",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 168.98,
+          "rsi": 54.5,
+          "sma_fast": 168.44,
+          "sma_slow": 166.12,
+          "macd": -0.0158,
+          "volume_ratio": 0.37
+        },
+        {
+          "ticker": "ORCL",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 157.77,
+          "rsi": 60.3,
+          "sma_fast": 139.73,
+          "sma_slow": 167.91,
+          "macd": 2.4561,
+          "volume_ratio": 0.65
+        },
+        {
+          "ticker": "GS",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 1033.36,
+          "rsi": 50.67,
+          "sma_fast": 1038.91,
+          "sma_slow": 939.17,
+          "macd": -3.9033,
+          "volume_ratio": 0.27
+        },
+        {
+          "ticker": "CAT",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 813.5,
+          "rsi": 45.35,
+          "sma_fast": 872.15,
+          "sma_slow": 771.12,
+          "macd": -19.0335,
+          "volume_ratio": 0.44
+        },
+        {
+          "ticker": "CRM",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 260.27,
+          "rsi": 77.63,
+          "sma_fast": 191.67,
+          "sma_slow": 200.08,
+          "macd": 20.694,
+          "volume_ratio": 0.27
+        },
+        {
+          "ticker": "SPY",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 770.74,
+          "rsi": 56.2,
+          "sma_fast": 756.87,
+          "sma_slow": 709.87,
+          "macd": 3.1415,
+          "volume_ratio": 0.4
+        },
+        {
+          "ticker": "QQQ",
+          "date": "2026-09-04",
+          "signal": "HOLD",
+          "close": 718.77,
+          "rsi": 53.52,
+          "sma_fast": 711.08,
+          "sma_slow": 656.78,
+          "macd": 1.1801,
+          "volume_ratio": 0.58
+        }
+      ],
+      "portfolio_value": 10185.17
     }
   ],
   "created": "2026-06-08"
